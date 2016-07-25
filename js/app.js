@@ -5,11 +5,11 @@ GiphyApp.controller('myCtrl', ['$scope', '$http', function($scope, $http) {
   // $scope.searchGifs = 'seahawks';
 
   $scope.gifSearch = function() {
-    console.log($scope.searchGifs);
     $http.get('http://api.giphy.com/v1/gifs/search?', {
       params: {
         q: $scope.searchGifs,
-        api_key: 'dc6zaTOxFJmzC'
+        api_key: 'dc6zaTOxFJmzC',
+        limit: 50
       }
     }).then(function success(res) {
       $scope.gifs = res.data.data;
