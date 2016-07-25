@@ -20,19 +20,21 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-app="GiphyApp">
+  <body ng-app="GiphyApp" ng-controller="myCtrl">
     <div class="container">
       <h1 class="text-center">Welcome to Giphy Search</h1>
 
-      <form class="form-inline">
+      <form class="form-inline" ng-submit="gifSearch()">
         <div class="form-group">
           <label for="search">Search</label>
-          <input type="text" placeholder="Search for GIFs" id="search" class="form-control">
+          <input type="text" placeholder="Search for GIFs" id="search" class="form-control" ng-model="searchGifs">
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
       </form>
 
-      <div id="results"></div>
+      <div class="well text-center" ng-repeat="gif in gifs track by $index" id="results">
+        <img ng-src="{{ gif.images.fixed_width.url }}" />
+      </div>
     </div>
   </body>
 </html>
