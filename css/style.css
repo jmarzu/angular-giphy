@@ -1,0 +1,19 @@
+.title {
+	text-align: center;
+	font-size: 40px; 
+}
+
+#results {
+	text-align: center;
+}
+
+#results img {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+
+	#results img {
+		width: 40%;
+	}
+}

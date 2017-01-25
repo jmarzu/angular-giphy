@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Giphy Search</title>
 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -17,16 +19,15 @@
   </head>
   <body ng-app="GiphyApp">
     <div class="container" ng-controller="myCtrl" infinite-scroll="myPagingFunction()" infinite-scroll-distance="3">
-      <h1 class="text-center">Welcome to Giphy Search</h1>
+      <h1 class="title">Welcome to Giphy Search</h1>
 
       <form class="form-inline" ng-submit="gifSearch()">
         <div class="form-group">
-          <label for="search">Search</label>
           <input type="text" placeholder="Search for GIFs" id="search" class="form-control" ng-model="searchGifs">
         </div>
       </form>
 
-      <div class="well text-center" ng-repeat="gif in gifs track by $index" id="results">
+      <div class="well" ng-repeat="gif in gifs track by $index" id="results">
         <img ng-src="{{ gif.images.fixed_height.url }}" />
       </div>
     </div>

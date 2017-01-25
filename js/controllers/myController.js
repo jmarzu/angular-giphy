@@ -1,11 +1,3 @@
-
-
-var GiphyApp = angular.module('GiphyApp', [])
-
-// .controller('myCtrl', require('/controllers/myController.js'))
-
-// ;
-
 GiphyApp.controller('myCtrl', ['$scope', '$http', function($scope, $http) {
   console.log('in the controller');
   // $scope.searchGifs = 'seahawks';
@@ -19,7 +11,6 @@ GiphyApp.controller('myCtrl', ['$scope', '$http', function($scope, $http) {
       }
     }).then(function success(res) {
       $scope.gifs = res.data.data;
-      console.log(res.data.data);
     }, function error(res) {
       console.log(res);
     });
@@ -41,4 +32,3 @@ GiphyApp.controller('myCtrl', ['$scope', '$http', function($scope, $http) {
     })
 
 }]);
-
