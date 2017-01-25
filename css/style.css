@@ -12,8 +12,15 @@
 }
 
 @media (min-width: 768px) {
+	#search {
+		width: 500px;
+		margin: 3% 0;
+	}
+}
 
+@media (min-width: 768px) {
 	#results img {
 		width: 40%;
 	}
 }
+
